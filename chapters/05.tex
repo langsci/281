@@ -28,7 +28,6 @@ Table \ref{tab:focus_trigger_target} shows examples for such question-answer-pai
 	\lsptoprule
 Focus structure & Example trigger (Q) and target sentence (A) \\
 \midrule
-& \\
 Background & Q: Hat er die Säge auf die Wohse gelegt? \\
 & \hspace{5 mm}`Did he put the saw on the Wohse?' \\
 & A: Er hat [den Hammer]$_F$ auf die Wohse gelegt. \\
@@ -73,21 +72,16 @@ As described above, in each trial, a tool is placed on one of the fictitious obj
 
 \begin{table}
 \caption{Tools with English translation.}
-\begin{tabularx}{\textwidth}{Xl}
-	\lsptoprule\\
-\textbf{Tool} & \textbf{Translation} \\
+\begin{tabularx}{\textwidth}{XlXl}
+	\lsptoprule
+\textbf{Tool} & \textbf{Translation} & \textbf{Tool} & \textbf{Translation} \\
 \hline
-Amboss & Anvil \\
-Besen & Broom \\
-Bohrer & Drill \\
-Bürste & Brush \\
-Hammer & Hammer \\
-Pinsel & Paint brush \\ 
-Rolle & Paint roller \\ 
-Säge & Saw \\
-Schere & Scissors \\
-Zange & Pliers\\
-\lspbottomrule
+Amboss & anvil & Pinsel & Paint brush \\
+Besen & broom & Rolle & Paint roller \\ 
+Bohrer & drill & Säge & Saw \\
+Bürste & brush & Schere & Scissors \\
+Hammer & Hammer Zange & Pliers\\
+ \lspbottomrule
 \end{tabularx}
 \label{tab:tools}
 \end{table}
@@ -97,7 +91,7 @@ For each of the 27 participants the order of trials was randomised with some res
 The scenes, objects, tools, and robots were drawn by a professional book illustrator. The game was developed as an interactive website using HTML and JavaScript with jQuery for animation (e.g. robots' arm and mouth movement, the door opening, and closing). The experimenter sat behind the participant and pressed a key on the keyboard to make the robot move toward the tool and proceed to the next trial. There was a ``rescue key" to repeat the trial in case something went wrong. Between trials, the scenery disappeared for 4 seconds and the screen transitioned through a series of light, muted colours. This short break detached the trials from one another to make sure that the focus structure of the target sentence made reference to the current trial only and not to the previous trial. In order to make the task more game-like, points were counted for each complete trial in the lower right corner of the screen. Figure \ref{fig:exp_trial} presents an example of the experiment screen where the second robot has just asked his question and is waiting for the answer of the participant. The code of the experiment app is available under open source and creative commons license: \href{http://doi.org/10.5281/zenodo.2611287}{http://doi.org/10.5281/zenodo.2611287}.
 
 \begin{figure}
-\fbox{\includegraphics[width=\textwidth]{figures/ch5/Exp_Trial.png}}
+\fbox{\includegraphics[width=.95\textwidth]{figures/ch5/Exp_Trial.png}}
 \caption{Example screen from the experiment during a trial with contrastive focus condition.}
 \label{fig:exp_trial}
 \end{figure}
@@ -128,12 +122,10 @@ Although using the semitones scale already eliminates a great deal of variation 
 
 The labels described above for the tonal onglide were used to determine the alignment of the peak. In the case of falling accents, the beginning of the fall was used as the peak; in the case of rising accents, the end of the rise was used as the peak. The alignment of the peak is calculated as the difference between the time point of the peak and the time point of the beginning of the vowel in the accented syllable in ms. No equivalent for deaccented target words could be applied for this measure. Figure \ref{fig:alignment_measure} shows a schema of the measure.
 
-\begin{figure}[htbp]
-\begin{center}
+\begin{figure}
 \includegraphics[width=\textwidth]{figures/ch5/measures_alignment.pdf}
 \caption{Schema of alignment measure.}
 \label{fig:alignment_measure}
-\end{center}
 \end{figure}
 
 \subsection{Lip aperture}
@@ -149,24 +141,20 @@ Lip aperture was evaluated as the Euclidean distance between the lips, as given 
 \label{eq:eukl_lips}
 \end{equation}
 
-\begin{figure}[htbp]
-\begin{center}
+\begin{figure}
 \includegraphics[width=7cm]{figures/ch5/measures_lips.pdf}
 \caption{Schema of the lip aperture measure.}
 \label{fig:lip_measure}
-\end{center}
 \end{figure}
 
 \subsection{Position of the tongue body}
 
 The vertical (high-low) and the horizontal (front-back) position of the back-most tongue sensor was measured as an indication of the position of the tongue body. Because the stressed syllable is followed by a syllable containing schwa, the exact target of the horizontal tongue body movement could not consistently be determined for the vowel /o/ in the stressed syllable as schwa can be lower than /o/. Therefore, a different method was applied for all tongue trajectory measures: The first 50\% of each acoustic vowel was taken as a time window to measure the tongue body position. The mean of all points on the trajectory falling in this 50\% window was calculated for each token. The length of the window (50\%) is, of course, arbitrary. However, it seems plausible to assume that the acoustic vowel is a perceptually relevant time interval. It thus makes sense to ask how high or low, back or front the vowel is articulated in this window. Using only the first 50\% reduces the influence of the following vowel on the measure. Figure \ref{fig:tounge_measure} shows a schema of the measure for two different trajectories and the potential outcome of the measure (as bar graphs). The measure was used on both the horizontal and the vertical dimension of the movement as well as for both vowels /a/ and /o/ to make all measures comparable.
 
-\begin{figure}[htbp]
-\begin{center}
+\begin{figure}
 \includegraphics[width=\textwidth]{figures/ch5/measures_tbo2.pdf}
 \caption{Schema of the tongue body measure.}
 \label{fig:tounge_measure}
-\end{center}
 \end{figure}
 
 \section{Data and availability}
