@@ -21,17 +21,15 @@ In fact, many theories in the twentieth century have implicitly incorporated the
 [G]eneral linguistic theory might propose, as substantive universals, that [...] phonetic transcriptions must make use of a particular, fixed set of phonetic features. [...] We will be concerned with the theory of ``universal phonetics," that part of general linguistics that specifies the class of ``possible phonetic representations" of sentences by determining the universal set of phonetic features and the conditions on their possible combinations. The form of each sentence in each language is drawn from this class of possible phonetic representations.
 \end{quote}
 
-\begin{figure}[h]
-\begin{center}
+\begin{figure}
 \includegraphics[width=\linewidth]{figures/ch2/real_vot.pdf}
 \caption[Mean VOT values for velar stops from eighteen languages in the study of \cite{ChoLadefoged1999}]{Mean VOT values for velar stops from eighteen languages in the study of \cite{ChoLadefoged1999}. Dashed lines indicate the category boundaries assumed by the authors.}
 \label{fig:cho_ladefoged_1999}
-\end{center}
 \end{figure}
 
 To illustrate this point, if language drew on a fixed set of phonetic categories, the picture obtained by \cite{ChoLadefoged1999} should look more like the simulated data shown in Figure \ref{fig:simulated_vot}. Compared to this figure, the original picture resembles a continuous increase of VOT lacking clear jumps between the putative categories. Although this remains pure speculation, it is in line with \citet[42]{Ladd2014} who concludes that ``any apparent discontinuities in the gradual increase from one end of the VOT scale to the other would disappear" when more data were added to the picture of Cho and Ladefoged.
 
-\begin{figure}[h]
+\begin{figure}
 \includegraphics[width=\linewidth]{figures/ch2/simulated_vot.pdf}
 \caption{Simulated VOT values under the assumption of a universal set of phonetic categories.}
 \label{fig:simulated_vot}
@@ -71,7 +69,7 @@ A framework that is able to capture gradient phenomena like this is \emph{Articu
 
 A gestural score is a tabular visualisation of the gestural activations during the production of a word or phrase. The vertical axis shows the \emph{tract variables} that correspond to the recruitment of the articulators. In the cases shown here, tongue tip (TT), tongue body (TB) and glottis (GLO) are displayed. There are many more tract variables available in the Articulatory phonology modelling approach, for an overview see \cite{BrowmanGoldstein1992} and \cite{Mücke2018}, as well as the next chapter. The horizontal axis of the gestural score displays \emph{time} such that if an interval starts to the right of another interval, it is said to start later. The boxes give the description of the \emph{location} and \emph{degree of constriction} in a tract variable. The constriction locations used in the score in Figure \ref{fig:score_late_calls} are alveolar (alv), palatal, velar and uvular. The constriction degrees used in the scores comprise two types of closure: clo, denoting a full closure, and clo*, denoting a partial closure with a lateral opening. In addition, critical (crit) stands for a very narrow constriction resulting in friction noise. Finally, the degrees of constriction for the vowels used here are narrow and mid. For the glottis, wide simply indicates that the glottis is open for voiceless, it is closed for voiced otherwise.
 
-\begin{figure}[h]
+\begin{figure}
 \includegraphics[width=\linewidth]{figures/ch2/late_calls.pdf}
 \caption[Gestural scores of the utterance \emph{late calls}.]{Gestural scores of the utterance \emph{late calls} with no overlap of the two stop sounds (top) and high degree of overlap of the two stop sounds (bottom).}
 \label{fig:score_late_calls}
@@ -118,12 +116,11 @@ Interestingly, stems with a back vowel and one or two transparent vowels have be
 \label{eq:stochastic_ot_table}
 \end{equation}
 
-\begin{figure}[h]
-\begin{center}
+\begin{figure}
 \includegraphics[width=9cm]{figures/ch2/stochastic_ot.pdf}
 \caption[Ranking strength probabilities for the constraints of \citet{HayesLonde2006}.]{Ranking strength probabilities for the constraints based on footnote 15 of \citet{HayesLonde2006}. \textsc{Local[NN]} (purple, solid line), \textsc{Local}[e:] (blue, dashed line), \textsc{Distal[B]} (red, dotted line).}
 \label{fig:probs_stoch_ot}
-\end{center}
+
 \end{figure}
 
 As becomes clear from this example, stochastic OT is able to cope with statistically gradient patterns, or categorical variation, i.e. the statistical preference for one or another category. Continuous variation is not captured by this framework. In the next chapter, a dynamical systems approach to the problem of the probabilistic suffix choice in Hungarian will be outlined that focusses on continuous sub-symbolic variation \citep{GafosBenus2006}. This model builds on articulatory details and shows how continuous variation may contribute to categorical variation. 

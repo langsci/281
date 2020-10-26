@@ -203,24 +203,21 @@ V(\phi) = -a \cos(\phi) - b \cos( 2 \phi)
 
 In the model, increasing frequency of the movements is conceptualised as a decrease in the ratio $\frac{b}{a}$. Figure \ref{fig:hkb_landscapes} illustrates the attractor landscapes for different values of the $\frac{b}{a}$. To interpret the effect of scaling $\frac{b}{a}$ towards zero, the metaphor of a ball rolling down the attractor landscape can be employed again. In the figure, the ball starts in one of the anti-phase attractors with $\frac{b}{a} = 1$ (top left). This attractor is at $\phi = \pi$ which is the phase angle of 180° in radians. When going from left to right and top to bottom in the plot, the tempo of the finger movement increases and the ratio $\frac{b}{a}$ decreases. However, at first, the ball stays in the initial anti-phase attractor. This attractor basin becomes shallower until it is not an attractor basin anymore. At this critical value of $\frac{b}{a}$ (see lower left corner), the ball will be set into motion and roll down to the in-phase attractor which is at $\phi = 0$.
 
-\begin{figure}[!htbp]
-\begin{center}
+\begin{figure}
 \includegraphics[width=\textwidth]{figures/ch3/hkb_potential.pdf}
 \caption{Attractor landscapes of \citet{HakenKelsoBunz1985} for different values of $\frac{b}{a}$.}
 \label{fig:hkb_landscapes}
-\end{center}
+
 \end{figure}
 
 Figure \ref{fig:hkb_simulation} shows what happens to the oscillatory finger movements (upper pannel)  and their relative phase (middle panel) over time when the ratio $\frac{b}{a}$ drops beyond the critical value. As can be seen in the middle panel, the relative phase changes from anti-phase to in-phase abruptly -- with a small portion of instability after which the oscillations of the fingers in the top panel are exactly synchronous (and thus plotted on top of each other).
 
 Hence, this dynamical model that is able to account for two qualitatively distinct coordination modes of finger motion using a potential function that is modulated by scaling a continuous parameter (or the ratio of two parameters). The model was in fact seminal and had great impact on models of speech production as will become clear in what follows. First, a closer look at the use of dynamics to model the \emph{gesture} in Articulatory phonology will be taken. Second, the coupled oscillator model for \emph{intergestural coordination} building upon \citet{HakenKelsoBunz1985} will be presented.
 
-\begin{figure}[!htbp]
-\begin{center}
+\begin{figure}
 \includegraphics[width=12cm]{figures/ch3/hkb_simulation.pdf}
 \caption{Simulation of the model of \citet{HakenKelsoBunz1985} starting in anti-phase mode and turning into in-phase mode.}
 \label{fig:hkb_simulation}
-\end{center}
 \end{figure}
 
 \medskip\noindent \textit{Code used in this section: hkb\_phase\_modes.m, hkb\_potential.m, hkb\_simulation.m}
@@ -232,12 +229,12 @@ The framework of Articulatory phonology, as described in Chapter \ref{chapter_pa
 
 Articulatory phonology builds upon a model known as \emph{task dynamics} to describe the gestures of speech production. Task dynamics (see \citealp{Saltzman1986, SaltzmanKelso1987, Saltzman1991}; as well as \citealp{Hawkins1992} for an introductory overview) has been developed to describe various patterns of movement that include multiple effectors like the shoulder, the upper and lower arm as well as the hand when grasping an object. Similar to other motion systems, speech involves the coordination of multiple effectors, in this case articulators, to form the relevant constrictions \citep{BrowmanGoldstein1989}. The task dynamics approach to articulation does not focus on the motion of the individual articulators but on the motion of \emph{tract variables} \citep{BrowmanGoldstein1992}. Tract variables describe the coordinative structures that jointly yield the relevant constrictions. For example, the upper lip, the lower lip and the jaw contribute to the tract variable of lip aperture \citep{BrowmanGoldstein1992}. Table \ref{tab:tract_vars} gives an overview of the tract variables and the articulators involved in these tract variables. Most tract variables come in “horizontal-vertical” pairs: Constriction location (horizontal) is combined with constriction degree (vertical). The gestures in Articulatory phonology are formed from the set of tract variables. When constriction degree and location are present, both dimensions are used to build the gesture.
 
-\begin{table}[htp]
+\begin{table}
 \caption{Tract variables of Articulatory phonology from \citet[73]{BrowmanGoldstein1989}.}
-\begin{center}
-\begin{tabular}{lll}
+\begin{tabularx}{\textwidth}{Xll}
+%	\ļsptoprule
 &			\textbf{tract variable} &			\textbf{articulators involved}\\
-\hline
+\midrule
 \textbf{LP} &		lip protrusion &				upper and lower lips, jaw\\
 \textbf{LA} &		lip aperture &				upper and lower lips, jaw\\
 \textbf{TTCL} &	tongue tip constriction location &	tongue tip, body, jaw \\
@@ -246,8 +243,8 @@ Articulatory phonology builds upon a model known as \emph{task dynamics} to desc
 \textbf{TBCD} &	tongue body constriction degree &	tongue body, jaw \\
 \textbf{VEL} &	velic aperture &				velum \\
 \textbf{GLO} &	glottal aperture &				glottis \\
-\end{tabular}
-\end{center}
+  \lspbottomrule
+\end{tabularx}
 \label{tab:tract_vars}
 \end{table}%
 
@@ -290,7 +287,7 @@ More important for the modelling of articulatory gestures is the parameter $b$, 
 \end{center}
 \end{figure}
 
-Finally, $x_0$ denotes equilibrium or resting position. Figure \ref{fig:dho_rest} gives an overview of the consequences of manipulating this parameter for a critically damped system. As illustrated by the plots, for a critically damped system or an overdamped system, the parameter $x_0$ is the position of the point attractor that the system converges to. In Articulatory phonology, the control of a tract variable is modelled with a critically damped harmonic oscillator. The resting position $x_0$ corresponds to the constriction location or degree depending on the tract variable. 
+\hspace*{-1mm}Finally, $x_0$ denotes equilibrium or resting position. Figure \ref{fig:dho_rest} gives an over\-view of the consequences of manipulating this parameter for a critically damped system. As illustrated by the plots, for a critically damped system or an overdamped system, the parameter $x_0$ is the position of the point attractor that the system converges to. In Articulatory phonology, the control of a tract variable is modelled with a critically damped harmonic oscillator. The resting position $x_0$ corresponds to the constriction location or degree depending on the tract variable. 
 
 \begin{figure}[htp]
 \begin{center}
@@ -400,7 +397,7 @@ If two consonants or more are present in the onset of a syllable, a pair-wise in
 
 \subsection{Modelling dynamics of categoriality and continuity}
 
-In the last section, dynamical models of motion and articulation have been presented. Crucially, these models do not only entail mere physical descriptions of the mechanism of speech production but put the dynamical approach they employ in a phonological, cognitive perspective: The gestures of Articulatory phonology are viewed as phonological primitives, the coordination patterns of the coupled oscillators model shape phonological patterns of syllable structure. This perspective maintains that both categorical and continuous aspects of speech can be described jointly by dynamical models. The current section explores this idea more explicitly by presenting some interesting and influential approaches to modelling categoriality and continuity in the sound pattern of language.
+In the last section, dynamical models of motion and articulation have been presented. Crucially, these models do not only entail mere physical descriptions of the mechanism of speech production but put the dynamical approach they employ in a phonological, cognitive perspective: The gestures of Articulatory phonology are viewed as phonological primitives, the coordination patterns of the coupled oscillators model shape phonological patterns of syllable structure. This perspective maintains that both categorical aspects and continuous aspects of speech can be described jointly by dynamical models. The current section explores this idea more explicitly by presenting some interesting and influential approaches to modelling categoriality and continuity in the sound pattern of language.
 
 \subsubsection{Perceptual categories}
 

@@ -21,13 +21,13 @@ Natural productions by a male, native German speaker were used for the robot's q
 
 Table \ref{tab:focus_trigger_target} shows examples for such question-answer-pairs. In the examples, square brackets and subscript $F$ mark the focus domain. Each question was given auditorily and additionally shown as a combination of pictures in a thought bubble above the robot's head: the question tool on top of the question object in the case of background and contrastive focus; a simple question mark in the case of broad focus; the object and the question word ``wo?" (`where?') in the case of narrow focus. The answers that the participant had to produce were presented in written form at the bottom of the screen. Many participants reported that they were able to give the answers without reading them on the screen after some trials. The participants were asked to always produce the answer with the same syntactic structure and to not add any words like ``nein" (`no'). None of the participants had any problems with this restriction. Likewise, none of the participants reported that they found the sentences unnatural or difficult.
 
-\begin{table}[htp]
-\begin{center}
+\begin{table}
 \caption{Example question-answer-pairs to elicit the focus structures.}
 \label{tab:focus_trigger_target}
-\begin{tabular}{l l}
+\begin{tabularx}{\textwidth}{l Q}
+	\lsptoprule
 Focus structure & Example trigger (Q) and target sentence (A) \\
-\hline
+\midrule
 & \\
 Background & Q: Hat er die Säge auf die Wohse gelegt? \\
 & \hspace{5 mm}`Did he put the saw on the Wohse?' \\
@@ -47,23 +47,23 @@ Narrow focus & Q: Wo hat er den Hammer hingelegt? \\
 Contrastive focus & Q: Hat er den Hammer auf die Mahse gelegt? \\
 & \hspace{5 mm}`Did he put the hammer on the Mahse?' \\
 & A: Er hat den Hammer auf [die Wohse]$_F$ gelegt. \\
-& \hspace{5 mm}`He put the hammer on the Wohse.'
-\end{tabular}
-\end{center}
+& \hspace{5 mm}`He put the hammer on the Wohse.'\\
+\lspbottomrule
+\end{tabularx}
 \end{table}
 
 To control for the segmental context and for word frequency, twenty German sounding disyllabic nonce words with a C$_1$V$_1$:C$_2$ǝ structure were chosen as target words. The words were designed to have word stress on the first syllable. The stressed vowel V$_1$ was either /a:/ or /o:/, the second vowel always schwa. The consonants (C$_1$ and C$_2$) either require movements of the labial system or the tongue tip to avoid influences on the tongue body measures for the vowel. The first consonant was chosen from the set of /n m b l v/, the second consonant from /n m z l v/. The consonants and vowels were combined such that each first consonant C$_1$ of /n m b l v/ occurred twice with each first vowel V$_1$ /a:/ or /o:/. Each second consonant-schwa-combination /nǝ mǝ zǝ lǝ vǝ/ occurred four times in the whole set. Special care was taken that the words did not overlap with real German words. All words were presented with the female determiner ``die" /di:/. All participants pronounced the words as expected. The target words are listed in Table \ref{tab:target_words}.
 
-\begin{table}[htp]
+\begin{table}
 \caption{Target words.}
-\begin{center}
-\begin{tabular}{lllll}
+\begin{tabularx}{\textwidth}{XXXXl}
+\lsptoprule
 Nohme & Mohme & Bohme & Lohne & Wohme \\ 
 Nohse & Mohwe & Bohwe & Lohle & Wohse \\ 
 Nahne & Mahne & Bahle & Lahse & Wahne \\ 
-Nahle & Mahse & Bahwe & Lahle & Wahwe
-\end{tabular}
-\end{center}
+Nahle & Mahse & Bahwe & Lahle & Wahwe\\
+\lspbottomrule
+\end{tabularx}
 \label{tab:target_words}
 \end{table}
 
@@ -71,10 +71,10 @@ In the setting of the experiment, each target word was associated with a fictiti
 
 As described above, in each trial, a tool is placed on one of the fictitious objects. Each object was paired with a tool to occur with. All tools are given in Table \ref{tab:tools}. Since there were 10 tools and 20 target words in the game, each tool had to occur twice. Furthermore, for the background condition and the contrastive focus condition, a competitor tool or object was needed: for the direct object of the question when the target word was in the background (``Did he place X on A?” “He placed Y on A!”) and for the indirect object of the question when the target word was in contrastive focus (``Did he place X on A?” “He placed X on B!"). These combinations were fixed for all participants, yielding 20 quadruples of target object, tool, competitor object, and competitor tool.\footnote{In the case of trials with broad focus or narrow focus, the competitor object and the competitor tool are not needed. Thus, in the quadruples for broad and narrow focus trials, these positions are empty.} The competitor object was chosen randomly with the restriction that the first consonant or the first vowel did not equal the first vowel or consonant of the target object. The competitor tool was selected such that it differed in the first consonant from the target sentence tool. The 20 target words occurred with all four focus conditions resulting in 80 trials per speaker. As a training phase, 16 trials with different objects and tools (everyday objects, e.g. a table) preceded the actual experiment session. 
 
-\begin{table}[htp]
+\begin{table}
 \caption{Tools with English translation.}
-\begin{center}
-\begin{tabular}{ll}
+\begin{tabularx}{\textwidth}{Xl}
+	\lsptoprule\\
 \textbf{Tool} & \textbf{Translation} \\
 \hline
 Amboss & Anvil \\
@@ -86,9 +86,9 @@ Pinsel & Paint brush \\
 Rolle & Paint roller \\ 
 Säge & Saw \\
 Schere & Scissors \\
-Zange & Pliers
-\end{tabular}
-\end{center}
+Zange & Pliers\\
+\lspbottomrule
+\end{tabularx}
 \label{tab:tools}
 \end{table}
 
@@ -96,12 +96,10 @@ For each of the 27 participants the order of trials was randomised with some res
 
 The scenes, objects, tools, and robots were drawn by a professional book illustrator. The game was developed as an interactive website using HTML and JavaScript with jQuery for animation (e.g. robots' arm and mouth movement, the door opening, and closing). The experimenter sat behind the participant and pressed a key on the keyboard to make the robot move toward the tool and proceed to the next trial. There was a ``rescue key" to repeat the trial in case something went wrong. Between trials, the scenery disappeared for 4 seconds and the screen transitioned through a series of light, muted colours. This short break detached the trials from one another to make sure that the focus structure of the target sentence made reference to the current trial only and not to the previous trial. In order to make the task more game-like, points were counted for each complete trial in the lower right corner of the screen. Figure \ref{fig:exp_trial} presents an example of the experiment screen where the second robot has just asked his question and is waiting for the answer of the participant. The code of the experiment app is available under open source and creative commons license: \href{http://doi.org/10.5281/zenodo.2611287}{http://doi.org/10.5281/zenodo.2611287}.
 
-\begin{figure}[htbp]
-\begin{center}
+\begin{figure}
 \fbox{\includegraphics[width=\textwidth]{figures/ch5/Exp_Trial.png}}
 \caption{Example screen from the experiment during a trial with contrastive focus condition.}
 \label{fig:exp_trial}
-\end{center}
 \end{figure}
 
 \section{Measures}
@@ -120,12 +118,10 @@ If the nuclear accent was not placed on the target word, it was placed on the di
 
 Although using the semitones scale already eliminates a great deal of variation between speakers, like gender effects, normalisation is needed to make the speakers more comparable. To do so, each rising onglide value is divided by the mean of the speaker’s rising onglides, and each falling onglide value is divided by the mean of the speaker’s falling onglides. It is plausible that a rise is best interpreted in relation to other rises, while a fall is best interpreted in relation to other falls of the same speaker. For example, a raw onglide value of +6 semitones might be quite extreme for a speaker with a mean of +4 semitones for rises compared to a speaker with a mean of +6 semitones for rises. For the unaccented cases, where it is not possible to speak of rises and falls, the overall mean of the absolute onglide values for each speaker was used in the normalisation procedure.
 
-\begin{figure}[htp]
-\begin{center}
+\begin{figure}
 \includegraphics[width=7cm]{figures/ch5/measures_onglide.pdf}
 \caption{Schema of tonal onglide measure.}
 \label{fig:onglide_measure}
-\end{center}
 \end{figure}
 
 \subsection{Alignment of the peak}
