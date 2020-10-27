@@ -11,7 +11,7 @@ The previous chapter (Chapter \ref{chapter_onglide_modelling}) presented the res
 
 Before turning to the quantitative results, an example of a contour with an early nuclear accent on the direct object is presented to give a better impression of the kind of data that are analysed. As Figure \ref{fig:contour_background} illustrates for one production of a male speaker (the same male speaker as in the contours in \ref{fig:example_contours}), not placing an accent on the target word yields a flat stretch of F0 on and around the target word. 
 
-\begin{figure}
+\begin{figure}[t]
 \includegraphics[width=\textwidth]{figures/ch7/intonation_contour_background.pdf}
 \caption[Example intonation contour for the background condition.]{Example intonation contour for the background condition. The blue box indicates the lexically stressed (but unaccented) syllable of the target word. The red arrow traces the tonal onglide equivalent.}
 \label{fig:contour_background}
@@ -45,6 +45,7 @@ The first pattern of behaviour can be obtained by a model like the one described
 \label{fig:example_models}
 \end{figure}
 
+\newpage
 A possible model that ties these two patterns together can be formulated as given in Equation \ref{eq:onglide_model2} by the potential $V(x)$ and the corresponding force $F(x)$. Choosing parameter values for background, broad focus, narrow focus and contrastive focus, one can observe the change in the system as shown in Figure \ref{fig:potentials_force_bg_br_na_co}. The attractor landscape is monostable for $k = -0.5$ (background) but is bistable for $k = 2.1$ (broad focus). Scaling the control parameter further tilts the landscapes to the right side (i.e. it stabilises the rising attractor) for $k = 2.5$ (narrow focus) and $k = 3.0$ (contrastive focus). The jump from background to broad focus appears large. It has to be borne in mind, however, that the system has to go through a stage where the falling accents dominate the system's outcome. In this stage, the left attractor has to be more stable, e.g. to model the results of speaker group 1 (see Chapter \ref{chapter_onglide_modelling}).
 
 \begin{equation}
@@ -65,13 +66,13 @@ Using a simulation with the addition of noise, the outcome of the model as a sto
 
 The same characteristic pattern as in the results for the tonal onglide can be attested: The system produces a unimodal distribution slightly below zero for background. The bimodal distribution of broad focus is nearly symmetrical. In narrow and contrastive focus, the right mode (rising) becomes increasingly strong. The mean values of the rising (positive) distributions also show essentially the same stepwise increase for the “accented” focus types (broad, narrow and contrastive focus). This result reveals that the rising (right) attractor moves toward more extreme values when the control parameter value is increased and the attractor landscape tilts to the right side.
 
-\begin{figure}
+\begin{figure}[t]
 \includegraphics[width=\textwidth]{figures/ch7/onglide_all_across.pdf}
 \caption{Distributions of simulation results for $k$ values modelling background ($k=-0.5$), broad ($k=2.1$), narrow ($k=2.5$) and contrastive focus ($k=3$).}
 \label{fig:simulation_bg_br_na_co}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[t]
 \includegraphics[width=7.5cm]{figures/ch7/positive_means_across.pdf}
 \caption{Means of positive simulated onglides for $k$ values modelling broad ($k=2.1$), narrow ($k=2.5$) and contrastive focus ($k=3$).}
 \label{fig:simulation_means_bg_br_na_co}
@@ -172,15 +173,17 @@ V(x,y) = \frac{x^4}{4} - (1-e^{\frac{1}{2}-k})x^2 - \frac{|k|(k-2)x}{4} + \frac{
 
 The probability density function of this non-deterministic dynamical system can be found as a stationary solution to the Fokker-Planck equation for the system \citep{Haken1977, GafosBenus2006}. In Figure \ref{fig:3d_probs1} and Figure \ref{fig:3d_probs2}, the graphs of probability functions are given for the system with two dimensions from two perspectives. They reveal the pattern described above for the attractor landscapes with a change from a single peak to two almost equal peaks from $k = -0.5$ to $k = 2.1$ (background to broad focus), and a strengthening of the right peak from $k = 2.1$ to $k = 2.5$ (broad focus to narrow focus) and from $k = 2.5$ to $k = 3.0$ (narrow focus to contrastive focus). 
 
-The outlined model can be extended by adding an unrestricted number of dimensions, for example the vertical and horizontal tongue body position. Their shape may resemble the shape of the lip aperture dimension. Since the modifications in these parameters go in the opposite direction, the part added to the potential would be minimally different (i.e. $\frac{(z+k)^2}{2}$ instead of $\frac{(z-k)^2}{2}$, where $z$ denotes the state of the tongue position). Most of the results presented above make it plausible to think of these dimensions as being modulated by the same control parameter. The horizontal tongue position of the vowel /a/, however, does not fit in this picture.
-
 \begin{figure}
-\includegraphics[width=\textwidth]{figures/ch7/probabilities1.pdf}
-\caption[Probability density functions for the system with the $k$ values modelling background, broad, narrow and contrastive focus -- perspective 1.]{Probability density functions for the system with the $k$ values modelling background (top left), broad (top right), narrow (bottom left) and contrastive focus (bottom right) -- perspective 1.}
-\label{fig:3d_probs1}
+	\includegraphics[width=\textwidth]{figures/ch7/probabilities1.pdf}
+	\caption[Probability density functions for the system with the $k$ values modelling background, broad, narrow and contrastive focus -- perspective 1.]{Probability density functions for the system with the $k$ values modelling background (top left), broad (top right), narrow (bottom left) and contrastive focus (bottom right) -- perspective 1.}
+	\label{fig:3d_probs1}
 \end{figure}
 
-\begin{figure}
+The outlined model can be extended by adding an unrestricted number of dimensions, for example the vertical and horizontal tongue body position. Their shape may resemble the shape of the lip aperture dimension. Since the modifications in these parameters go in the opposite direction, the part added to the potential would be minimally different (i.e. $\frac{(z+k)^2}{2}$ instead of $\frac{(z-k)^2}{2}$, where $z$ denotes the state of the tongue position). Most of the results presented above make it plausible to think of these dimensions as being modulated by the same control parameter. The horizontal tongue position of the vowel /a/, however, does not fit in this picture.
+
+
+
+\begin{figure}[t]
 \includegraphics[width=\textwidth]{figures/ch7/probabilities2.pdf}
 \caption[Probability density functions for the system with the $k$ values modelling background, broad, narrow and contrastive focus -- perspective 2.]{Probability density functions for the system with the $k$ values modelling background (top left), broad (top right), narrow (bottom left) and contrastive focus (bottom right) -- perspective 2.}
 \label{fig:3d_probs2}

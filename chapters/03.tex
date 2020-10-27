@@ -93,7 +93,7 @@ To learn about the patterns of the system without calculating solutions, a \emph
 \label{fig:phase_space_straight_line}
 \end{figure}
 
-In the right plot, the space phase plot is shown for cases in which the control parameter $k$ is greater than zero. Whenever the system is in a negative state (negative $x$), the change given by $\dot{x}$ is negative, so the system moves further away from zero towards $-\infty$. Whenever the system is in a positive state (positive $x$), the change given by $\dot{x}$ is positive, so the system moves further away from zero towards $\infty$. When the system starts at $x = 0$, it will stay there. But this is the only possibility to be in the state of zero for $k > 0$. All other initial states will lead away from zero, even states that are very close to zero, as for example $x = \frac{1}{10000}$. This is again indicated by the arrows, in this case pointing away from zero. Zero in this scenario is called an \emph{unstable fixed point} or \emph{repeller}, represented by an empty circle.
+In the right plot, the space phase plot is shown for cases in which the control parameter $k$ is greater than zero. Whenever the system is in a negative state (negative $x$), the change given by $\dot{x}$ is negative, so the system moves further away from zero towards $-\infty$. Whenever the system is in a positive state \largerpage(positive $x$), the change given by $\dot{x}$ is positive, so the system moves further away from zero towards $\infty$. When the system starts at $x = 0$, it will stay there. But this is the only possibility to be in the state of zero for $k > 0$. All other initial states will lead away from zero, even states that are very close to zero, as for example $x = \frac{1}{10000}$. This is again indicated by the arrows, in this case pointing away from zero. Zero in this scenario is called an \emph{unstable fixed point} or \emph{repeller}, represented by an empty circle.
 
 \medskip\noindent \textit{Code used in this section: ds\_straight\_line.m}
 
@@ -121,7 +121,7 @@ When $k$ equals $-k_c$ or $k_c$, a \emph{half stable point} exists on the opposi
 
 In sum, this system exhibits bistability -- the presence of two attractors -- when $k$ is in the range between $-k_c$ and $k_c$ (i.e. $-k_c < k < k_c$). When the control parameter reaches the critical value on one or the other side ($-k_c$ or $k_c$), bifurcation occurs and the bistability breaks down: One attractor turns into a half-stable point at the respective critical threshold; beyond the critical values, even this half-stable point vanishes.
 
-\begin{figure}
+\begin{figure}[b]
 \includegraphics[width=\textwidth]{figures/ch3/double_well_force.pdf}
 \caption[Phase space plot for $\dot{x} = k + x - x^3$.]{Phase space plot for $\dot{x} = k + x - x^3$. The filled circle stands for an attractor, the empty circle stands for a repeller, the square stands for a half-stable point.}
 \label{fig:double_well_force}
@@ -138,7 +138,7 @@ Compare Figure \ref{fig:double_well_potential} (potential) to Figure \ref{fig:do
 
 \medskip\noindent \textit{Code used in this section: double\_well.m}
 
-\begin{figure}
+\begin{figure}[b]
 \includegraphics[width=\textwidth]{figures/ch3/double_well_potential.pdf}
 \caption{Potential $V(x) = - kx - \frac{x^2}{2} + \frac{x^4}{4}$ corresponding to the phase space plots of the force $\dot{x} = k + x - x^3$.}
 \label{fig:double_well_potential}
@@ -164,13 +164,13 @@ An influential application of dynamical systems in the domain of human behaviour
 
 In terms of a dynamical model, the movement of each finger can be idealised as a harmonic oscillation and each oscillation can be described by its phase angle $\phi_i$ \citep{HakenKelsoBunz1985}. When modelling the coordination patterns introduced in the last paragraph, the \emph{relative phase} is of primary concern. Let $\phi_1$ and $\phi_2$ be the phase angles of the respective fingers, then $\phi = \phi_2 - \phi_1$ is the relative phase. In the right panel of Figure \ref{fig:hkb_phase_position}, the oscillations of the two fingers in anti-phase (top) and in-phase (bottom) are shown.\footnote{The oscillations for both fingers have identical frequencies and amplitudes in this example.} The dashed line marks one time point $t_1$. The left panel gives the phase angles of the oscillations at this time point $t_1$. When the oscillations of the fingers are in anti-phase mode (top), the phase angles are displaced by 180°, i.e. the relative phase $\phi$ is 180°. At $t_1$, $\phi_1$ is 40° and $\phi_2$ is 220° and consequently $\phi=\phi_2-\phi_1=180$°. The relative phase is visualised by the grey shaded circular sector in the phase angle plot on the left. When the oscillations of the fingers are in in-phase mode (bottom), their phase angles are identical and the relative phase is 0°. At $t_1$ in the lower panel, both $\phi_1$ and $\phi_2$ are 220°, hence $\phi = \phi_2 - \phi_1 = 0$°. When plotted on top of each other, only one of the oscillations is visible in this case. 
 
-\begin{figure}
+\begin{figure}[t]
 \includegraphics[width=10cm]{figures/ch3/phase_position_hkb_fingers.pdf}
 \caption{Phase angles and evolution of the oscillatory finger movements as modelled by \citet{HakenKelsoBunz1985}.}
 \label{fig:hkb_phase_position}
 \end{figure}
 
-An additional result of \citet{Kelso1981} was that when subjects started to move their index fingers in anti-phase (as in the top panel of \ref{fig:hkb_phase_position}) and the frequency of this movement was increased, the subjects' finger movements changed abruptly to an in-phase coordination (as in the bottom panel of \ref{fig:hkb_phase_position}) at a critical frequency boundary. To capture these findings, \citet{HakenKelsoBunz1985} proposed a model that has attractors for anti-phase and in-phase coordination for certain ranges of the control parameter and a single attractor for in-phase coordination when the control parameter is scaled past a critical threshold. The model is given by its potential energy function in Equation \ref{eq:hkb_potential}. The control parameter is the ratio of $b$ and $a$, i.e $\frac{b}{a}$. The potential is in fact periodic and so the shape of the attractor landscape repeats over and over again with $V(\phi + 2\pi) = V(\phi)$. 
+An additional result of \citet{Kelso1981} was that when subjects started to move their index fingers in anti-phase (as in the top panel of \ref{fig:hkb_phase_position}) and the frequency of this movement was increased, the subjects' finger movements changed abruptly to an in-phase coordination (as in the bottom panel of \ref{fig:hkb_phase_position}) at a critical frequency boundary. To capture these findings, \citet{HakenKelsoBunz1985} proposed a model that has attractors for anti-phase and in-phase coordination for certain ranges of the control parameter and a single attractor for in-phase coordination when the control parameter is scaled past a critical threshold. The model is given by its potential energy function in Equation \ref{eq:hkb_potential}. The control parameter is the ratio of $b$ and $a$, i.e $\frac{b}{a}$. \newpage The potential is in fact periodic and so the shape of the attractor landscape repeats over and over again with $V(\phi + 2\pi) = V(\phi)$. 
 
 \begin{equation}
 V(\phi) = -a \cos(\phi) - b \cos( 2 \phi)
@@ -179,7 +179,7 @@ V(\phi) = -a \cos(\phi) - b \cos( 2 \phi)
 
 In the model, increasing frequency of the movements is conceptualised as a decrease in the ratio $\frac{b}{a}$. Figure \ref{fig:hkb_landscapes} illustrates the attractor landscapes for different values of the $\frac{b}{a}$. To interpret the effect of scaling $\frac{b}{a}$ towards zero, the metaphor of a ball rolling down the attractor landscape can be employed again. In the figure, the ball starts in one of the anti-phase attractors with $\frac{b}{a} = 1$ (top left). This attractor is at $\phi = \pi$ which is the phase angle of 180° in radians. When going from left to right and top to bottom in the plot, the tempo of the finger movement increases and the ratio $\frac{b}{a}$ decreases. However, at first, the ball stays in the initial anti-phase attractor. This attractor basin becomes shallower until it is not an attractor basin anymore. At this critical value of $\frac{b}{a}$ (see lower left corner), the ball will be set into motion and roll down to the in-phase attractor which is at $\phi = 0$.
 
-\begin{figure}
+\begin{figure}[t]
 \includegraphics[width=\textwidth]{figures/ch3/hkb_potential.pdf}
 \caption{Attractor landscapes of \citet{HakenKelsoBunz1985} for different values of $\frac{b}{a}$.}
 \label{fig:hkb_landscapes}
@@ -198,7 +198,7 @@ Hence, this dynamical model that is able to account for two qualitatively distin
 
 \medskip\noindent \textit{Code used in this section: hkb\_phase\_modes.m, hkb\_potential.m, hkb\_simulation.m}
 
-
+\newpage
 \subsubsection{Articulatory gestures}
 
 The framework of Articulatory phonology, as described in Chapter \ref{chapter_pandp}, views gestures as the primitives of phonology. Gestures are orchestrated to build higher forms like syllables and words. A gesture is defined in terms of a dynamical model. Chapter \ref{chapter_pandp} outlined how the model is able to account for variation in the speech signal, as for example the case of assimilation. In the current chapter, the model will be reviewed from the dynamical perspective.
@@ -224,7 +224,7 @@ Articulatory phonology builds upon a model known as \emph{task dynamics} to desc
 \label{tab:tract_vars}
 \end{table}%
 
-At the heart of the modelling approach of task dynamics is a dynamical system known as the \emph{damped harmonic oscillator} that specifies the control of a tract variable \citep{Hawkins1992}. It is formulated mathematically as the second order differential equation given in Equation \ref{eq:dho} \citep{SaltzmanKelso1987}. The systems reviewed in this chapter so far were given by first-order differential equations. In a second-order differential equation the second derivative, denoted by $\ddot{x}$, occurs.
+At the heart of the modelling approach of task dynamics is a dynamical\largerpage{} system known as the \emph{damped harmonic oscillator} that specifies the control of a tract variable \citep{Hawkins1992}. It is formulated mathematically as the second order differential equation given in Equation \ref{eq:dho} \citep{SaltzmanKelso1987}. The systems reviewed in this chapter so far were given by first-order differential equations. In a second-order differential equation the second derivative, denoted by $\ddot{x}$, occurs.
 
 \begin{equation}
 m\ddot{x} + b\dot{x} + k(x-x_0) = 0
@@ -233,9 +233,9 @@ m\ddot{x} + b\dot{x} + k(x-x_0) = 0
 
 The damped harmonic oscillator describes the motion of a mass attached to a spring that is stretched vertically \citep{FeynmanLeightonSands1963}, and is therefore often referred to as a spring-mass system. The state variable $x$ is the position of the mass attached to the spring, $\dot{x}$ is its velocity and $\ddot{x}$ is its acceleration. Besides $x$ and its two derivatives, a collection of parameters occurs in the equation: $m$, $b$, $k$ and $x_0$. These parameters are discussed shortly in this section; examples are given to illustrate the consequences of manipulating the parameters. 
 
-The parameter $m$ refers to the mass attached to the spring. This parameter is usually set to 1 and not changed. For the sake of completeness, however, Figure \ref{fig:dho_mass}  shows what happens when the mass is changed (for this simulation, the parameter $b$ is set to 0, the parameter $k$ is set to 1, the parameter $x_0$ is set to 0). For higher values of $m$, the system oscillates at lower frequencies. It is easy to understand intuitively that greater masses need more time to be transported over the same distance compared to smaller masses. 
+The parameter $m$ refers to the mass attached to the spring. This parameter is usually set to 1 and not changed. For the sake of completeness, however, Figure \ref{fig:dho_mass}  shows what happens when the mass is changed (for this simulation, the parameter $b$ is set to 0, the parameter $k$ is set to 1, the parameter $x_0$ is set to 0). For higher values of $m$, the system oscillates at lower frequencies. It is easy to understand intuitively that greater masses need more time to be transported over the same distance compared to smaller masses. \newpage
 
-\begin{figure}[htp]
+\begin{figure}[t]
 \includegraphics[width=7cm]{figures/ch3/dho_mass.pdf}
 \caption{Consequences of scaling the parameter $m$ (mass) in the harmonic oscillator.}
 \label{fig:dho_mass}
@@ -329,7 +329,7 @@ c_{31} & c_{32} & 0 \\
 
 Figure \ref{fig:coupled_oscillators} provides an example of two oscillators that are coupled in an in-phase manner and that start with a relative phase of 110°. The three rows of the figure show three different points in time. The first row presents a time point that is shortly after the beginning of the simulation, the relative phase at this time point is still close to the initial relative phase of 110°. The last row presents a time point at which the two oscillators have almost the same phase, i.e. the relative phase is close to 0°. The middle row presents a time point in between. In the left column, the graph of the potential function is shown with the red dot indicating the current state of the system (it is possible to think of the dot as the ball in the metaphor used above). In the mid column, the phase angles of the oscillators are presented. In the right column, the position of the oscillators are shown in a time window around the time point corresponding to the potential and the phase angles in the same row (the dashed line specifies this time point). The plot illustrates how the state of the system approaches the attractor at 0°, the minimum of the potential, and how the relative phase of the two oscillators decreases over time. 
 
-\begin{figure}
+\begin{figure}[t]
 \includegraphics[width=\textwidth]{figures/ch3/coupled_oscillators.pdf}
 \caption[Potential, phase angles and position corresponding to two oscillators coupled in-phase]{Potential, phase angles and position corresponding to two oscillators coupled in-phase at three time points (from top to bottom).}
 \label{fig:coupled_oscillators}
@@ -345,7 +345,7 @@ Usually, syllables involve more than two gestures and, thus, more than two oscil
 
 If two consonants or more are present in the onset of a syllable, a pair-wise in-phase coupling of all of the consonants to the vowel alone would lead to an overlapping of the consonants. To achieve at least a partially sequential realisation of the onset consonants, the onset gestures of each consonant can be coupled with anti-phase links to the vowel. The result is a \emph{competitive coupling} in which the final phases represent a compromise of the competing coupling forces \citep{Nam2007, Saltzmanetal2008, Goldsteinetal2009}. Competitive coupling is able to explain an effect known as the \emph{C-centre effect} in branching onsets \citep{BrowmanGoldstein1988, Byrd1995}. The C-centre effect, illustrated in Figure \ref{fig:c-centre}, describes the following situation: The timing of C1 in relation of the vowel V in a complex onset structure C1C2V is earlier compared to the simple structure C1V. In other words, when a second consonant C2 is added after C1, the earlier consonant C1 shifts leftwards. Likewise, the timing of C2 in C1C2V is later compared to the simpler structure C2V, i.e. when a second consonant C1 is added before C2, the later consonant C2 shifts rightwards. The timing of the centre of the consonant cluster in relation to the vowel, however, stays constant \citep{BrowmanGoldstein1988, Goldsteinetal2009}.
 
-\begin{figure}
+\begin{figure}[t]
 \includegraphics[width=3.5cm]{figures/ch3/c_centre.pdf}
 \caption{Schematic illustration of the c-centre effect adapted from \citet{HermesMückeGrice2013}.}
 \label{fig:c-centre}
@@ -363,7 +363,7 @@ In the last section, dynamical models of motion and articulation have been prese
 
 The authors exposed participants to ordered continua between English \emph{say} and \emph{stay} and between \emph{stay} and \emph{say}. To be more specific, the gap duration between \emph{s} and \emph{ay} increases and then decreases with each stimulus during one experiment run. The participants were tasked to categorise each stimulus in a forced choice task. Two dominant response patterns are evident in the data. In one response pattern, the category switch in the increasing order (the gap duration becomes larger) is later compared to the decreasing order (the gap duration becomes smaller). In other words, for the change from \emph{say} to \emph{stay} a larger gap is necessary than for the change from \emph{stay} to \emph{say}. This response pattern is called \emph{hysteresis}. In the other response pattern, the category switch is earlier in the increasing order compared to the decreasing order. For the change from \emph{say} to \emph{stay} a smaller gap is necessary than for the change from \emph{stay} to \emph{say}. This response pattern is called \emph{enhanced contrast}. Both patterns are illustrated in the two top panels of Figure \ref{fig:tuller_response}. The figure also shows the response pattern \emph{critical boundary} in which the category switch occurs at the same point in the acoustic continuum in both increasing and decreasing order. In the data of \citet{Tulleretal1994}, the response patterns hysteresis and enhanced contrast dominate while the pattern critical boundary is rarely found.
 
-\begin{figure}
+\begin{figure}[t]
 \includegraphics[width=11cm]{figures/ch3/tuller_etal_1994_response_patterns.pdf}
 \caption[Possible response patterns of \citet{Tulleretal1994}.]{Possible response pattern of \citet{Tulleretal1994}: hysteresis (top), enhanced contrast (middle), critical boundary (bottom).}
 \label{fig:tuller_response}
@@ -402,22 +402,25 @@ Recall that the system stays in the attractor as long as the critical value of $
 
 The left panel of \ref{fig:tuller_lambda_epsilon} presents the predictions for the first half of the run. The plot is to be read from bottom to top as the arrows indicate, i.e. from no gap to the maximal gap duration (\emph{say} to \emph{stay}). The number of perceived stimuli $n$ is small in this first half and under the threshold  $n_c$ (and thus $\theta(n-n_c) = 0$). When $\epsilon$ is small (left on the x-axis), the categorisation is only dependent on the gap duration. However, for larger $\epsilon$ values, the gap duration needed to shift the percept from \emph{say} to \emph{stay} decreases. In other words, the larger $\epsilon$, the earlier the switch from one category to the other when going from no gap to the maximum gap.
 
+\begin{figure}[t]
+	\includegraphics[width=\textwidth]{figures/ch3/tuller_lambda_epsilon_plane.pdf}
+	\caption[Location of critical values of the control parameter $k$ in the acoustic continuum of gap duration as a function of the parameter $\epsilon$ in the \citet{Tulleretal1994} model.]{Location of critical values of the control parameter $k$ in the acoustic continuum of gap duration as a function of the parameter $\epsilon$ in the \citet{Tulleretal1994} model. Left: first half of the run (increasing gap duration, small $n$). Middle: second half of the run (decreasing gap duration, large $n$). Right: superposition of critical boundary in first and second run.}
+	\label{fig:tuller_lambda_epsilon}
+\end{figure}
+
 The middle panel of \ref{fig:tuller_lambda_epsilon} shows the predictions for the second half of the run. This plot is to be read from top to bottom, i.e. from the maximal gap duration to no gap (\emph{stay} to \emph{say}). The number of perceived stimuli in the second half is large and above the threshold $n_c$ (and thus $\theta(n-n_c) = 1$). In this case, the model predicts that for larger $\epsilon$ values, the gap duration needed to switch the percept from \emph{stay} to \emph{say} is larger compared to smaller values of $\epsilon$. The larger $\epsilon$, the earlier the switch from from \emph{stay} to \emph{say} when going from the maximum gap to no gap.
 
 The right panel of \ref{fig:tuller_lambda_epsilon} combines the thick lines of the two neighbouring plots. There is a critical value of $\epsilon$, namely $\epsilon_c$, for which the category switch occurs at the same gap duration in both halves of the run. At this point the two lines intersect. When $\epsilon$ is below $\epsilon_c$, the percept changes later and the observed response pattern is \emph{hysteresis}. This is visualised by the line of the first half of the run being positioned above the line of the second half of the run. Going from bottom (no gap) to top (maximum gap) in the first half of the run, the critical boundary of $k$ is reached at a longer gap duration. Going from top (maximum gap) to bottom (no gap) in the second half of the run, the critical boundary of $k$ is reached at a shorter gap duration. 
 
 When $\epsilon$ is above the critical $\epsilon_c$, the percept changes earlier and the observed response pattern is \emph{enhanced contrast}. This is illustrated by the fact that the line of the first half of the run  is positioned under the line of the second half of the run. Going from bottom (no gap) to top (maximum gap) in the first half of the run, the critical boundary of $k$ is reached at a shorter gap duration. Going from top (maximum gap) to bottom (no gap) in the second half of the run, the critical boundary of $k$ is reached at a longer gap duration.
 
-\begin{figure}
-\includegraphics[width=\textwidth]{figures/ch3/tuller_lambda_epsilon_plane.pdf}
-\caption[Location of critical values of the control parameter $k$ in the acoustic continuum of gap duration as a function of the parameter $\epsilon$ in the \citet{Tulleretal1994} model.]{Location of critical values of the control parameter $k$ in the acoustic continuum of gap duration as a function of the parameter $\epsilon$ in the \citet{Tulleretal1994} model. Left: first half of the run (increasing gap duration, small $n$). Middle: second half of the run (decreasing gap duration, large $n$). Right: superposition of critical boundary in first and second run.}
-\label{fig:tuller_lambda_epsilon}
-\end{figure}
+
 
 The model of \citet{Tulleretal1994} shows how the flexibility and context dependency of perceptual categories can be modelled using the double well potential with two attractors presented earlier in this chapter. The next section will present work adapting a similar potential for the modelling approach to capture continuous and categorical variation found in production data.
 
 \medskip\noindent \textit{Code used in this section:\\
 tuller\_1994\_potential.m, tuller\_1994\_crit\_lambda.m, tuller\_1994\_map.m}
+
 
 \subsubsection{Incomplete neutralisation}
 
@@ -443,7 +446,7 @@ V_F(x) = \theta \frac{x^2}{2} -\theta x_{req} x
 \label{fig:gafos_benus_intentional_force_potential}
 \end{figure}
 
-In the second part of the model, an additional force is introduced to account for the fact that German allows for voiceless obstruents only in syllable coda. Here, the same attractor landscape is used as in \citet{Tulleretal1994}, its force $M(x)$ and potential $V_M(x)$ are given in Equation \ref{eq:gafos_benus_coda_force_potential}. For the control parameter $k$, a value beyond the critical threshold of $-k_c$ is chosen ($-1$ in the illustration) such that the landscape is tilted to the voiceless side and the voiceless attractor is the only attractor that remains, see Figure \ref{fig:gafos_benus_coda_potential}. The presence of only on attractor reflects the fact that there is one possibility for obstruents in syllable codas: voiceless.
+In the second part of the model, an additional force is introduced to account for\largerpage{} the fact that German allows for voiceless obstruents only in syllable coda. Here, the same attractor landscape is used as in \citet{Tulleretal1994}, its force $M(x)$ and potential $V_M(x)$ are given in Equation \ref{eq:gafos_benus_coda_force_potential}. For the control parameter $k$, a value beyond the critical threshold of $-k_c$ is chosen ($-1$ in the illustration) such that the landscape is tilted to the voiceless side and the voiceless attractor is the only attractor that remains, see Figure \ref{fig:gafos_benus_coda_potential}. The presence of only on attractor reflects the fact that there is one possibility for obstruents in syllable codas: voiceless.
 
 \begin{equation}
 \begin{split}
@@ -475,7 +478,7 @@ The resulting patterns are illustrated in Figure \ref{fig:gafos_benus_combined_p
 
 To summarise, producing the intended obstruent and adhering to voiceless obstruents in codas leads to a conflict in words like \emph{Rad}. While this conflict is resolved by a constrain ranking and a single resulting outcome in OT, the interaction can be modulated continuously in the model of \citet{GafosBenus2006}. The effect of $F(x)$ on $M(x)$ is a ``pull" towards more voiced productions on the voicing continuum $x$. This ``pull" is modulated by the scaling of the control parameter $\theta$. 
 
-\begin{figure}
+\begin{figure}[t]
 \includegraphics[width=8.5cm]{figures/ch3/gafos_combined_potentials.pdf}
 \caption[Combined potentials of the model of \citet{GafosBenus2006}.]{Combined potentials of the model of \citet{GafosBenus2006} for three values of the control parameter $\theta$. Vertical lines indicate the location of the attractor. Blue: $\theta = 0.1$, red: $\theta = 0.3$, green: $\theta = 0.5$. $k$ is constant at $-1$ in all graphs.}
 \label{fig:gafos_benus_combined_potentials}
@@ -518,7 +521,7 @@ The effect of coarticulation of vowels can be modelled as gestural blending by a
 
 The degree of retraction of a front vowel is assessed by the quantity $R$ in this model of vowel gesture blending. In the example in the right panel of Figure \ref{fig:gafos_benus_blending_examples}, the front vowel described through the potential $V_F(x)$ has a target constriction location of $2$, the vowel resulting from blending has a target location of $1$. In this case, $R$, representing the difference between the basic front vowel and the vowel retracted by influence of the back vowel, is $1$.
 
-The choice of a front vowel or back vowel suffix can now be modelled employing a dynamical system with a double-well potential that uses the retraction degree $R$ as a control parameter. In the system, one attractor is associated with the back suffix, the other attractor is associated with the front suffix. Hence, the second part of the vowel harmony model of \citet{GafosBenus2006} is given by the force $F(x)$ and potential $P(x)$ in Equation \ref{eq:gafos_benus_vowel_harmony_force_potential}. These equations are similar to those in the previous sections. Note, however, that the exposition deviates slightly here and integrates the coefficients for the quartic term $x^4$ and the linear term $x$ from \citet[][262, footnote 85]{Benus2005}.\footnote{The graphs of \citet{GafosBenus2006} are also based on the coefficient $0.1$ for $x^4$, the coefficient of the linear term $x$ is simply put differently.} The choice of this coefficient does not change the general quality of the model; it merely locates the attractor in regions around $-2$ and $2$ corresponding to the assumed values for front and back constriction locations.
+The choice of a front vowel or back vowel suffix can now be modelled\largerpage{} employing a dynamical system with a double-well potential that uses the retraction degree $R$ as a control parameter. In the system, one attractor is associated with the back suffix, the other attractor is associated with the front suffix. Hence, the second part of the vowel harmony model of \citet{GafosBenus2006} is given by the force $F(x)$ and potential $P(x)$ in Equation \ref{eq:gafos_benus_vowel_harmony_force_potential}. These equations are similar to those in the previous sections. Note, however, that the exposition deviates slightly here and integrates the coefficients for the quartic term $x^4$ and the linear term $x$ from \citet[][262, footnote 85]{Benus2005}.\footnote{The graphs of \citet{GafosBenus2006} are also based on the coefficient $0.1$ for $x^4$, the coefficient of the linear term $x$ is simply put differently.} The choice of this coefficient does not change the general quality of the model; it merely locates the attractor in regions around $-2$ and $2$ corresponding to the assumed values for front and back constriction locations.
 
 \begin{equation}
 \begin{split}
@@ -530,7 +533,7 @@ P(x) = -(2-3R)x + 0.1 x^4 - 0.5 x^2
 
 Figure \ref{fig:gafos_benus_suffix_potential} presents the graph of the potential $P(x)$ for different values of the control parameter $R$. If the degree of retraction of the transparent vowel is high, e.g. $R = 1.2$ or $R = 1.0$, the attractor landscape only predicts one possibility for the choice of the suffix: back. The reverse is true when the retraction is small, e.g. $R = 0.2$ or $R = 0.4$, for which only front suffixes are possible. In between these values, the attractor landscape becomes bistable. In this region of intermediate $R$ values, the suffix choice can vary between front and back due to random fluctuations and the initial state.
 
-\begin{figure}
+\begin{figure}[t]
 \includegraphics[width=\textwidth]{figures/ch3/gafos_benus_suffix_potential.pdf}
 \caption{Suffix choice potential $P(x)$ for different values of the control parameter $R$.}
 \label{fig:gafos_benus_suffix_potential}
@@ -555,7 +558,7 @@ A description of the distributional patterns of a stochastic system can be obtai
 
 The simulation of the stochastic system can be carried out by solving the differential equation as described above in Section \ref{sec:diff_equations}. During each time step, noise from a Gaussian distribution is added. After a fixed number of steps, the simulation is finished and the solution is recorded. This procedure is repeated for a number of times in order to obtain a distribution of final solutions. For the solutions shown in the histograms of Figure \ref{fig:gafos_benus_simulation}, the simulation was run for 5000 time steps and repeated to obtain 5000 solutions.\footnote{The simulation is based on the code accompanying \citet{Gafos2006}.} Again, the same values for $R$ as before are chosen in these plots. The outcome of the simulation reproduces the probability density functions shown in the previous figure.
 
-\begin{figure}
+\begin{figure}[t]
 \includegraphics[width=\textwidth]{figures/ch3/gafos_benus_simulation.pdf}
 \caption{Simulation results for different values of the control parameter $R$ in the system given by the potential $P(x)$.}
 \label{fig:gafos_benus_simulation}
