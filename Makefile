@@ -36,7 +36,7 @@ main.snd: main.bbl
 	sed -i 's/.*Commission.*//' main.adx
 	sed -i 's/.*ASALE*//' main.adx
 	sed -i 's/.*Estudis*//' main.adx
-	sed -i 's/.*RAE*//' main.adx
+	sed -i 's/.*IPA*//' main.adx
 	sed -i 's/\\MakeCapital//' main.adx
 	python3 fixindex.py
 	mv mainmod.adx main.adx
