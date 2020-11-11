@@ -283,12 +283,12 @@
 \ProcessKeyvalOptions{langscibook}
 
 % \newcommand{\lsOutputLong}{long}
-\newcommand{\lsOutputBook}{book}             % standard book
-\newcommand{\lsOutputPaper}{paper}            % paper in edited volume
-\newcommand{\lsOutputGuidelines}{guidelines}  % guidelines
-\newcommand{\lsOutputCoverBODsc}{coverbodsc}      % cover with BoD measurements
-\newcommand{\lsOutputCoverBODhc}{coverbodhc}      % cover with BoD measurements
-\newcommand{\lsOutputCoverCS}{covercreatespace} % cover with CreateSpace measurements
+% \newcommand{\lsOutputBook}{book}             % standard book
+% \newcommand{\lsOutputPaper}{paper}            % paper in edited volume
+% \newcommand{\lsOutputGuidelines}{guidelines}  % guidelines
+% \newcommand{\lsOutputCoverBODsc}{coverbodsc}      % cover with BoD measurements
+% \newcommand{\lsOutputCoverBODhc}{coverbodhc}      % cover with BoD measurements
+% \newcommand{\lsOutputCoverCS}{covercreatespace} % cover with CreateSpace measurements
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     Output variables
@@ -300,6 +300,14 @@
 \newbool{coverBODhc}
 \newbool{coverBODsc}
 \newbool{coverCS}
+
+\newcommand{\lsOutputPaper}{paper}
+\newcommand{\lsOutputBook}{book}
+\newcommand{\lsOutputGuidelines}{guidelines}
+\newcommand{\lsOutputCoverBODhc}{coverbodhc}
+\newcommand{\lsOutputCoverBODsc}{coverbodsc}
+\newcommand{\lsOutputCoverCS}{amazoncover}
+
 \ifx\lsOutput\lsOutputPaper{\global\booltrue{paper}}\fi
 \ifx\lsOutput\lsOutputBook{\global\booltrue{book}}\fi
 \ifx\lsOutput\lsOutputGuidelines{\global\booltrue{guidelines}}\fi
@@ -311,6 +319,9 @@
 %     Class
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\RequirePackage{etex}
+\reserveinserts{18} % to prevent "no room for a new count error"
+
 \newcommand{\lsChapterPrefixString}{} %this conditional cannot be put
 % directly into the LoadClass, so we compute the value and store it in a command
  \ifbool{collection}{
@@ -321,6 +332,7 @@
         \renewcommand{\lsChapterPrefixString}{chapterprefix=true,}
     }{}
 }
+
 
 \LoadClass[
     fontsize=\lsFontsize, % default is 11pt
@@ -343,8 +355,8 @@
 \IfFileExists{./langsci-earlyload.def}{\input{langsci-earlyload.def}}{}
 
 \usepackage{morewrites} %more helper files to write to
-\usepackage{etex}
-\reserveinserts{18}
+% \usepackage{etex}
+% \reserveinserts{28}
 \usepackage{xstring}
 \usepackage{graphicx}
 \usepackage{hyphenat}
@@ -353,15 +365,12 @@
 	\usetikzlibrary{positioning}
 	\usetikzlibrary{calc}
 
-\usepackage{pbox}   % boxes with maximum width
 \usepackage[hyphens]{url}
 \urlstyle{same}
 
 
 %% standard commands
 \usepackage{langsci-basic}
-\usepackage{todonotes}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      Covers
@@ -1522,7 +1531,7 @@ Storage and cataloguing done by \storageinstitution\\[3ex]
 %% This sets the default for the positioning of floats
 \renewcommand{\fps@figure}{htbp}
 \renewcommand{\fps@table}{htbp}
-
+\usepackage[figuresright]{rotating}
 \usepackage{booktabs} % for nicer lines
 
 %% floats
@@ -1768,10 +1777,6 @@ Storage and cataloguing done by \storageinstitution\\[3ex]
 \providecommand{\partref}[1]{Part~\ref{#1}}
 \providecommand{\tabref}[1]{Table~\ref{#1}}
 \providecommand{\figref}[1]{Figure~\ref{#1}}
-
-
-
-\usepackage{tabularx} %must be loaded after hyperref. Maybe all float commands should be loaded here.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %    Collection (edited volume):
@@ -2129,7 +2134,6 @@ Storage and cataloguing done by \storageinstitution\\[3ex]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newlength{\LSPTmp}
-\usepackage[figuresright]{rotating}
 
 \ifbool{uniformtopskip}{}{% Donald Arseneau's automatic handling of page breaking from comp.text.tex: https://groups.google.com/d/topic/comp.text.tex/3eehwzortPg/discussion
     % With the optimisations from the memoir class. The memoir class has relative instead of absolute values.

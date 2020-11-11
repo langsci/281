@@ -62,7 +62,7 @@ An essential property of dynamical systems is that they often exhibit \emph{qual
 \subsection{The use of differential equations in dynamical systems}
 \label{sec:diff_equations}
 
-In the logistic map, time progresses in discrete steps (or generations). When solving the equation, one considers the time points $t_1, t_2, t_3, ..., t_n$. In reality, of course, time is best characterised as continuous. A very common way to describe a dynamical system with reference to continuous time is by using \emph{differential equations}. The equation in \ref{eq:straight_line} gives a simple example for a differential equation. It uses a very common notation with a dot above the $x$ which denotes that the function is a derivate with respect to time, $\dot{x} = \frac{dx}{dt}$ \citep{Fuchs2013}. The basic idea in this system is very similar to the logistic map: We observe the behaviour of the state variable $x$. To learn about the change of the system at each state of $x$, the differential equation of the system is solved.
+In the logistic map, time progresses in discrete steps (or generations). When solving the equation, one considers the time points $t_1, t_2, t_3, ..., t_n$. In reality, of course, time is best characterised as continuous. A very common way to describe a dynamical system with reference to continuous time is by using \emph{differential equations}. The equation in \ref{eq:straight_line} gives a simple example for a differential equation. It uses a very common notation with a dot above the $x$ which denotes that the function is a derivate with respect to time, $\dot{x} = dx/dt$ \citep{Fuchs2013}. The basic idea in this system is very similar to the logistic map: We observe the behaviour of the state variable $x$. To learn about the change of the system at each state of $x$, the differential equation of the system is solved.
 
 \begin{equation}
 \dot{x} = kx
@@ -93,7 +93,7 @@ To learn about the patterns of the system without calculating solutions, a \emph
 \label{fig:phase_space_straight_line}
 \end{figure}
 
-In the right plot, the space phase plot is shown for cases in which the control parameter $k$ is greater than zero. Whenever the system is in a negative state (negative $x$), the change given by $\dot{x}$ is negative, so the system moves further away from zero towards $-\infty$. Whenever the system is in a positive state \largerpage(positive $x$), the change given by $\dot{x}$ is positive, so the system moves further away from zero towards $\infty$. When the system starts at $x = 0$, it will stay there. But this is the only possibility to be in the state of zero for $k > 0$. All other initial states will lead away from zero, even states that are very close to zero, as for example $x = \frac{1}{10000}$. This is again indicated by the arrows, in this case pointing away from zero. Zero in this scenario is called an \emph{unstable fixed point} or \emph{repeller}, represented by an empty circle.
+In the right plot, the space phase plot is shown for cases in which the control parameter $k$ is greater than zero. Whenever the system is in a negative state (negative $x$), the change given by $\dot{x}$ is negative, so the system moves further away from zero towards $-\infty$. Whenever the system is in a positive state \largerpage(positive $x$), the change given by $\dot{x}$ is positive, so the system moves further away from zero towards $\infty$. When the system starts at $x = 0$, it will stay there. But this is the only possibility to be in the state of zero for $k > 0$. All other initial states will lead away from zero, even states that are very close to zero, as for example $x = 1/10000$. This is again indicated by the arrows, in this case pointing away from zero. Zero in this scenario is called an \emph{unstable fixed point} or \emph{repeller}, represented by an empty circle.
 
 \medskip\noindent \textit{Code used in this section: ds\_straight\_line.m}
 
@@ -127,7 +127,7 @@ In sum, this system exhibits bistability -- the presence of two attractors -- wh
 \label{fig:double_well_force}
 \end{figure}
 
-So far, differential equations have been used to represent a dynamical system. An additional, tightly connected way to define a dynamical system is by its \emph{potential function}. The potential is given by the negative integral of the differential equation. Thus, the relation of the differential equation, which is also often called the \emph{force function}, and the potential can be expressed as $\dot{x} = F(x) = -\frac{dV(x)}{dx}$, where $V(x)$ is the potential and $F(x)$ is the force. The graph of the potential function visualises the \emph{attractor landscape} of the dynamical system. Attractors appear as ``valleys", i.e. local minima in the graph. Figure \ref{fig:double_well_potential} gives the potential for the system defined by its differential in Equation \ref{eq:double_well_force}, the potential function itself is given in Equation \ref{eq:double_well_potential}. A commonly used metaphor for making the behaviour of the system understandable more intuitively is to imagine a ball or a marble rolling through the attractor landscape given by the potential \citep{HakenLevi2012}, since ``[t]he temporal evolution of a one-dimensional dynamical system corresponds to an overdamped motion of a particle in the landscape of its potential" \citep[22]{Fuchs2013}. Crucially, one has to think of the motion of the ball in ``thick or viscous fluid like honey" such that when ``it reaches a minimum it will stick there and will not oscillate back and forth" \citep[22]{Fuchs2013}.
+So far, differential equations have been used to represent a dynamical system. An additional, tightly connected way to define a dynamical system is by its \emph{potential function}. The potential is given by the negative integral of the differential equation. Thus, the relation of the differential equation, which is also often called the \emph{force function}, and the potential can be expressed as $\dot{x} = F(x) = -dV(x)/dx$, where $V(x)$ is the potential and $F(x)$ is the force. The graph of the potential function visualises the \emph{attractor landscape} of the dynamical system. Attractors appear as ``valleys", i.e. local minima in the graph. Figure \ref{fig:double_well_potential} gives the potential for the system defined by its differential in Equation \ref{eq:double_well_force}, the potential function itself is given in Equation \ref{eq:double_well_potential}. A commonly used metaphor for making the behaviour of the system understandable more intuitively is to imagine a ball or a marble rolling through the attractor landscape given by the potential \citep{HakenLevi2012}, since ``[t]he temporal evolution of a one-dimensional dynamical system corresponds to an overdamped motion of a particle in the landscape of its potential" \citep[22]{Fuchs2013}. Crucially, one has to think of the motion of the ball in ``thick or viscous fluid like honey" such that when ``it reaches a minimum it will stick there and will not oscillate back and forth" \citep[22]{Fuchs2013}.
 
 \begin{equation}
 V(x) = - kx - \frac{x^2}{2} + \frac{x^4}{4}
@@ -140,7 +140,7 @@ Compare Figure \ref{fig:double_well_potential} (potential) to Figure \ref{fig:do
 
 \begin{figure}[b]
 \includegraphics[width=\textwidth]{figures/ch3/double_well_potential.pdf}
-\caption{Potential $V(x) = - kx - \frac{x^2}{2} + \frac{x^4}{4}$ corresponding to the phase space plots of the force $\dot{x} = k + x - x^3$.}
+\caption{Potential $V(x) = - kx - x^2/2 + x^4/4$ corresponding to the phase space plots of the force $\dot{x} = k + x - x^3$.}
 \label{fig:double_well_potential}
 \end{figure}
 
@@ -170,7 +170,7 @@ In terms of a dynamical model, the movement of each finger can be idealised as a
 \label{fig:hkb_phase_position}
 \end{figure}
 
-An additional result of \citet{Kelso1981} was that when subjects started to move their index fingers in anti-phase (as in the top panel of \ref{fig:hkb_phase_position}) and the frequency of this movement was increased, the subjects' finger movements changed abruptly to an in-phase coordination (as in the bottom panel of \ref{fig:hkb_phase_position}) at a critical frequency boundary. To capture these findings, \citet{HakenKelsoBunz1985} proposed a model that has attractors for anti-phase and in-phase coordination for certain ranges of the control parameter and a single attractor for in-phase coordination when the control parameter is scaled past a critical threshold. The model is given by its potential energy function in Equation \ref{eq:hkb_potential}. The control parameter is the ratio of $b$ and $a$, i.e $\frac{b}{a}$. \newpage The potential is in fact periodic and so the shape of the attractor landscape repeats over and over again with $V(\phi + 2\pi) = V(\phi)$. 
+An additional result of \citet{Kelso1981} was that when subjects started to move their index fingers in anti-phase (as in the top panel of \ref{fig:hkb_phase_position}) and the frequency of this movement was increased, the subjects' finger movements changed abruptly to an in-phase coordination (as in the bottom panel of \ref{fig:hkb_phase_position}) at a critical frequency boundary. To capture these findings, \citet{HakenKelsoBunz1985} proposed a model that has attractors for anti-phase and in-phase coordination for certain ranges of the control parameter and a single attractor for in-phase coordination when the control parameter is scaled past a critical threshold. The model is given by its potential energy function in Equation \ref{eq:hkb_potential}. The control parameter is the ratio of $b$ and $a$, i.e $b/a$. \newpage The potential is in fact periodic and so the shape of the attractor landscape repeats over and over again with $V(\phi + 2\pi) = V(\phi)$. 
 
 \begin{equation}
 V(\phi) = -a \cos(\phi) - b \cos( 2 \phi)
@@ -179,12 +179,12 @@ V(\phi) = -a \cos(\phi) - b \cos( 2 \phi)
 
 \begin{figure}[b]
 	\includegraphics[width=\textwidth]{figures/ch3/hkb_potential.pdf}
-	\caption{Attractor landscapes of \citet{HakenKelsoBunz1985} for different values of $\frac{b}{a}$.}
+	\caption{Attractor landscapes of \citet{HakenKelsoBunz1985} for different values of $b/a$.}
 	\label{fig:hkb_landscapes}
 	
 \end{figure}
 
-In the model, increasing frequency of the movements is conceptualised as a decrease in the ratio $\frac{b}{a}$. Figure \ref{fig:hkb_landscapes} illustrates the attractor landscapes for different values of the $\frac{b}{a}$. To interpret the effect of scaling $\frac{b}{a}$ towards zero, the metaphor of a ball rolling down the attractor landscape can be employed again. In the figure, the ball starts in one of the anti-phase attractors with $\frac{b}{a} = 1$ (top left). This attractor is at $\phi = \pi$ which is the phase angle of 180° in radians. When going from left to right and top to bottom in the plot, the tempo of the finger movement increases and the ratio $\frac{b}{a}$ decreases. However, at first, the ball stays in the initial anti-phase attractor. This attractor basin becomes shallower until it is not an attractor basin anymore. At this critical value of $\frac{b}{a}$ (see lower left corner), the ball will be set into motion and roll down to the in-phase attractor which is at $\phi = 0$.
+In the model, increasing frequency of the movements is conceptualised as a decrease in the ratio $b/a$. Figure \ref{fig:hkb_landscapes} illustrates the attractor landscapes for different values of the $b/a$. To interpret the effect of scaling $b/a$ towards zero, the metaphor of a ball rolling down the attractor landscape can be employed again. In the figure, the ball starts in one of the anti-phase attractors with $b/a = 1$ (top left). This attractor is at $\phi = \pi$ which is the phase angle of 180° in radians. When going from left to right and top to bottom in the plot, the tempo of the finger movement increases and the ratio $b/a$ decreases. However, at first, the ball stays in the initial anti-phase attractor. This attractor basin becomes shallower until it is not an attractor basin anymore. At this critical value of $b/a$ (see lower left corner), the ball will be set into motion and roll down to the in-phase attractor which is at $\phi = 0$.
 
 \begin{figure}[b]
 	\includegraphics[width=12cm]{figures/ch3/hkb_simulation.pdf}
@@ -193,7 +193,7 @@ In the model, increasing frequency of the movements is conceptualised as a decre
 \end{figure}
 
 
-Figure \ref{fig:hkb_simulation} shows what happens to the oscillatory finger movements (upper pannel)  and their relative phase (middle panel) over time when the ratio $\frac{b}{a}$ drops beyond the critical value. As can be seen in the middle panel, the relative phase changes from anti-phase to in-phase abruptly -- with a small portion of instability after which the oscillations of the fingers in the top panel are exactly synchronous (and thus plotted on top of each other).
+Figure \ref{fig:hkb_simulation} shows what happens to the oscillatory finger movements (upper pannel)  and their relative phase (middle panel) over time when the ratio $b/a$ drops beyond the critical value. As can be seen in the middle panel, the relative phase changes from anti-phase to in-phase abruptly -- with a small portion of instability after which the oscillations of the fingers in the top panel are exactly synchronous (and thus plotted on top of each other).
 
 Hence, this dynamical model that is able to account for two qualitatively distinct coordination modes of finger motion using a potential function that is modulated by scaling a continuous parameter (or the ratio of two parameters). The model was in fact seminal and had great impact on models of speech production as will become clear in what follows. First, a closer look at the use of dynamics to model the \emph{gesture} in Articulatory phonology will be taken. Second, the coupled oscillator model for \emph{intergestural coordination} building upon \citet{HakenKelsoBunz1985} will be presented.
 
@@ -210,16 +210,16 @@ Articulatory phonology builds upon a model known as \emph{task dynamics} to desc
 \caption{Tract variables of Articulatory phonology from \citet[73]{BrowmanGoldstein1989}.}
 \begin{tabularx}{\textwidth}{Xll}
 	\lsptoprule
-&			\textbf{tract variable} &			\textbf{articulators involved}\\
+&			tract variable &			articulators involved\\
 \midrule
-\textbf{LP} &		lip protrusion &				upper and lower lips, jaw\\
-\textbf{LA} &		lip aperture &				upper and lower lips, jaw\\
-\textbf{TTCL} &	tongue tip constriction location &	tongue tip, body, jaw \\
-\textbf{TTCD} &	tongue tip constriction degree &		tongue tip, body, jaw \\
-\textbf{TBCL} &	tongue body constriction location &	tongue body, jaw \\
-\textbf{TBCD} &	tongue body constriction degree &	tongue body, jaw \\
-\textbf{VEL} &	velic aperture &				velum \\
-\textbf{GLO} &	glottal aperture &				glottis \\
+LP &		lip protrusion &				upper and lower lips, jaw\\
+LA &		lip aperture &				upper and lower lips, jaw\\
+TTCL &	tongue tip constriction location &	tongue tip, body, jaw \\
+TTCD &	tongue tip constriction degree &		tongue tip, body, jaw \\
+TBCL &	tongue body constriction location &	tongue body, jaw \\
+TBCD &	tongue body constriction degree &	tongue body, jaw \\
+VEL &	velic aperture &				velum \\
+GLO &	glottal aperture &				glottis \\
   \lspbottomrule
 \end{tabularx}
 \label{tab:tract_vars}
